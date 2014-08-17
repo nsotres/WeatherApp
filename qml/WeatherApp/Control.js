@@ -800,7 +800,7 @@ function setVar(city){
     //set city now
     //var city = weatherObj.cityName
     //log messages to ensure jsonObject is created w proper paramater
-    console.log("inside se---tVar function")
+    console.log("inside setVar function")
     console.log("city sent in: "+ city)
     console.log("\n")
     setCity(city)       //set the city global var
@@ -838,7 +838,7 @@ function loaded(jsonObject)
     //console.log("inside loaded() function")
 
     //shows request works on console log
-    console.log("****** S-HOWING -DAYS DATES****");
+    console.log("****** SHOWING DAYS ****");
     showRequestInfo("date: " + jsonObject.data.current_condition[0].cloudcover);
     console.log("after first call");
     //showRequestInfo("date[0]:" + jsonObject.data.weather[0].date);

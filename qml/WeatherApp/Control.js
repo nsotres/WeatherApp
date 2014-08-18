@@ -766,7 +766,6 @@ function getDayAfter(today){
     var Sun = "Sun";
     //test for current day sent in return next day
     if( (Mon.localeCompare(today)) == 0) {
-        console.log("Why is it in here?")
         return "Tue";
     }
     if( (Tue.localeCompare(today)) == 0){
@@ -796,37 +795,29 @@ function getDayAfter(today){
 //makes connection to weather site via JSON
 function setVar(city){
 
-    //city used to be the text input to this function
-    //set city now
-    //var city = weatherObj.cityName
-    //log messages to ensure jsonObject is created w proper paramater
+    /*log messages to ensure jsonObject is created w proper paramater
     console.log("inside setVar function")
     console.log("city sent in: "+ city)
     console.log("\n")
+    */
     setCity(city)       //set the city global var
     //create doc object to use http call
     var doc = new XMLHttpRequest();
     //create jsonObject and store response (http://www.w3schools.com/ajax/ajax_xmlhttprequest_send.asp)
-    /*doc.onreadystatechange = function() {
-       if (doc.readyState == XMLHttpRequest.DONE) {
-           var jsonObject = eval('(' + doc.responseText + ')');
-           loaded(jsonObject);
-        }
-    }*/
-    console.log("stop telling me its line 825 you puts");
     doc.onreadystatechange = function() {
        if (doc.readyState == XMLHttpRequest.DONE) {
            var jsonObject = eval('(' + doc.responseText + ')');
            loaded(jsonObject);
         }
     }
-    // Replace YOURPRIVATEKEY by your key from free.worldweatheronline.com
-    //current key (generated 8/14/14): 178101586a7bc637c0d25d1fcc6e945cb3d48432
-    //depricated key: 348fee824b002953131202
 
-    //Request data from weather website
-    //Get method is simpler to use
-    // depricated call: doc.open("GET", "http://free.worldweatheronline.com/feed/weather.ashx?q=" + city + "&format=json&num_of_days=5&key=178101586a7bc637c0d25d1fcc6e945cb3d48432");
+    /*Request data from weather website
+    Replace your key from free.worldweatheronline.com
+    current key (generated 8/14/14): 178101586a7bc637c0d25d1fcc6e945cb3d48432
+    depricated key: 348fee824b002953131202
+    Get method is simpler to use
+    depricated call: doc.open("GET", "http://free.worldweatheronline.com/feed/weather.ashx?q=" + city + "&format=json&num_of_days=5&key=178101586a7bc637c0d25d1fcc6e945cb3d48432");
+    */
     doc.open("GET", "http://api.worldweatheronline.com/free/v1/weather.ashx?key=178101586a7bc637c0d25d1fcc6e945cb3d48432&q=" + city + "&fx=yes&num_of_days=5&format=json", true);
     //send request to server
     doc.send();
@@ -835,18 +826,19 @@ function setVar(city){
 //displays information from weather site to log and app
 function loaded(jsonObject)
 {
-    //console.log("inside loaded() function")
+    //console.log("inside loaded() function") //debug line
 
     //shows request works on console log
-    console.log("****** SHOWING DAYS ****");
-    showRequestInfo("date: " + jsonObject.data.current_condition[0].cloudcover);
-    console.log("after first call");
-    //showRequestInfo("date[0]:" + jsonObject.data.weather[0].date);
-    //showRequestInfo("date[1]:" + jsonObject.data.weather[1].date);
-    //showRequestInfo("date[2]:" + jsonObject.data.weather[2].date);
-    //showRequestInfo("date[3]:" + jsonObject.data.weather[3].date);
-    //showRequestInfo("date[4]:" + jsonObject.data.weather[4].date);
-    //set all object variables
+    //console.log("****** SHOWING DAYS ****");
+
+    /*used to verify JSON object can be accessed
+    showRequestInfo("date[0]:" + jsonObject.data.weather[0].date);
+    showRequestInfo("date[1]:" + jsonObject.data.weather[1].date);
+    showRequestInfo("date[2]:" + jsonObject.data.weather[2].date);
+    showRequestInfo("date[3]:" + jsonObject.data.weather[3].date);
+    showRequestInfo("date[4]:" + jsonObject.data.weather[4].date);
+    set all object variables
+    */
     setWeatherObj(jsonObject)
     setD2(jsonObject)
     setD3(jsonObject)

@@ -1,5 +1,6 @@
 import QtQuick 2.0
 
+//Standard reusable button object for GUI
 Rectangle {
 
     id: buttonView

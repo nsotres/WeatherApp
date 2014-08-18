@@ -13,10 +13,10 @@ Nestor Sotres
 Contents
 ========
 
-(files of interest under WeatherApp>qml>WeatherApp)
-Button.qml
-main.qml
-control.js
+(files of interest under WeatherApp/qml/WeatherApp)
+Button.qml  - Reusable GUI Object
+main.qml    - Main GUI file for Application
+control.js  - Data handling and GUI updates
 
 Message
 =======

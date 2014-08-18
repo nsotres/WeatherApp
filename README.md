@@ -1,8 +1,8 @@
 WeatherApp
 ==========
 
-Weather Application- Graphical User Interface Project Programmed in Qt
-University of Illinois at Chicago
+Weather Application- Graphical User Interface Project Programmed in Qt<br>
+University of Illinois at Chicago<br>
 Designed for a standard Windows Tablet
 
 Author

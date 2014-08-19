@@ -14,10 +14,11 @@ Contents
 ========
 
 (files of interest under WeatherApp/qml/WeatherApp)<br>
-Button.qml  - Reusable GUI Object<br>
-main.qml    - Main GUI file for Application<br>
-control.js  - Data handling and GUI updates<br>
-
+<dl>
+<dt>Button.qml</dt><dd>- Reusable GUI Object</dd>
+<dt>main.qml</dt><dd>- Main GUI file for Application</dd>
+<dt>control.js</dt><dd>- Data handling and GUI updates</dd>
+</dl>
 Message
 =======
 
